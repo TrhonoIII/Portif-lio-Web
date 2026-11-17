@@ -13,3 +13,4 @@ jogos/outlaw/continuar-3d/
 
 # Sobras que a Unity cria ao lado da build e que não vão para o site
 *_BurstDebugInformation_DoNotShip/
+*_BackUpThisFolder_ButDontShipItWithYourGame/
