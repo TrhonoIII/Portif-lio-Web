@@ -611,9 +611,10 @@ kbd {
     }
 }
 
+/* duas colunas no computador (4 jogos = 2 × 2) e uma no celular */
 .grade-jogos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 16px;
 }
 

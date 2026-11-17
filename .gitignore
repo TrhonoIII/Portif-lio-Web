@@ -1,0 +1,15 @@
+# Arquivos que o Windows e o macOS criam sozinhos
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Configurações de editores e ferramentas
+.vscode/
+.idea/
+.claude/
+
+# Anotações e testes de desenvolvimento do Outlaw (não são usados pelo jogo)
+jogos/outlaw/continuar-3d/
+
+# Sobras que a Unity cria ao lado da build e que não vão para o site
+*_BurstDebugInformation_DoNotShip/
