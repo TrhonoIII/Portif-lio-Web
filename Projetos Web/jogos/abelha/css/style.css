@@ -1,0 +1,37 @@
+body {
+    background-color: #FFCC00; /* Fundo amarelo (temático de abelha) */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #333333; /* Letra escura para dar contraste com o fundo amarelo */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+canvas {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra preta para destacar o jogo */
+}
+
+/* === MODO EMBUTIDO (dentro do currículo) ===
+   Só o canvas, ocupando a janela inteira sem deformar. */
+html.embutido body {
+    background-color: #000;
+    overflow: hidden;
+}
+
+html.embutido h1 {
+    display: none;
+}
+
+html.embutido canvas {
+    display: block;
+    width: min(100vw, calc(100vh * 900 / 720));
+    height: auto;
+    box-shadow: none;
+}

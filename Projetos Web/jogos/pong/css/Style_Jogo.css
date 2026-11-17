@@ -1,0 +1,35 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3b3b3b;
+}
+
+
+canvas {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4b4b4b;
+}
+
+/* === MODO EMBUTIDO (dentro do currículo) ===
+   O canvas ocupa a janela inteira sem deformar. */
+html.embutido body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+html.embutido canvas {
+    position: static;
+    display: block;
+    width: min(100vw, calc(100vh * 1280 / 720));
+    height: auto;
+}

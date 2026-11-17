@@ -1,0 +1,895 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;600&family=Syne:wght@700&display=swap');
+
+:root {
+    --bg-deep: #050d1a;
+    --bg-card: #0b1628;
+    --bg-card-alt: #0d1f35;
+    --accent-green: #00e5a0;
+    --accent-cyan: #00bfff;
+    --accent-purple: #a78bfa;
+    --border-dim: rgba(0, 229, 160, 0.15);
+    --border-bright: rgba(0, 229, 160, 0.45);
+    --text-primary: #e2eaf5;
+    --text-muted: #7a95b8;
+    --text-code: #00e5a0;
+    --header-bg: #030a14;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* reserva o espaço da barra de rolagem: a página não "pula" quando a
+   janela do jogo abre e trava a rolagem */
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    transition: margin-left .5s;
+    line-height: 1.7;
+}
+
+/* === HEADER === */
+header {
+    background-color: var(--header-bg);
+    padding: 70px 20px 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-dim);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 229, 160, 0.018) 2px,
+        rgba(0, 229, 160, 0.018) 4px
+    );
+    pointer-events: none;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(0, 191, 255, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin: 0 0 6px;
+    position: relative;
+}
+
+/* === SEÇÕES === */
+h2 {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-green);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-left: 3px solid var(--accent-cyan);
+    padding-left: 14px;
+    margin-bottom: 22px;
+}
+
+h2::before {
+    content: '// ';
+    color: var(--text-muted);
+}
+
+h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+/* === CARDS === */
+.card-secao {
+    background-color: var(--bg-card);
+    margin: 28px auto;
+    padding: 32px 36px;
+    max-width: 860px;
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    position: relative;
+    transition: border-color 0.3s;
+}
+
+.card-secao::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40px; height: 2px;
+    background: var(--accent-green);
+}
+
+.card-secao:hover {
+    border-color: var(--border-bright);
+}
+
+/* === FOTO === */
+.foto-curriculo {
+    width: 140px;
+    height: 175px;
+    object-fit: cover;
+    border: 1px solid var(--border-bright);
+    border-radius: 3px;
+    margin-bottom: 16px;
+    filter: grayscale(20%);
+    position: relative;
+}
+
+/* === RESUMO === */
+#resumo-profissional {
+    background: var(--bg-card-alt);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    padding: 36px 40px;
+    position: relative;
+}
+
+#resumo-profissional::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40px; height: 2px;
+    background: var(--accent-purple);
+}
+
+#resumo-profissional::after {
+    content: '"';
+    position: absolute;
+    top: 28px;
+    left: 36px;
+    font-size: 4rem;
+    font-family: 'Syne', sans-serif;
+    color: var(--accent-purple);
+    opacity: 0.25;
+    line-height: 1;
+}
+
+/* === CONHECIMENTOS / BADGES === */
+.grid-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.conhecimentos {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    background: rgba(0, 229, 160, 0.07);
+    border: 1px solid var(--border-bright);
+    color: var(--accent-green);
+    padding: 6px 14px;
+    border-radius: 3px;
+    margin: 0;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, color 0.2s;
+    cursor: default;
+}
+
+.conhecimentos:hover {
+    background: rgba(0, 229, 160, 0.15);
+    color: #ffffff;
+}
+
+/* === EXPERIÊNCIA === */
+.subtitulo-item {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-cyan);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    margin: 2px 0 10px;
+}
+
+.item-experiencia p:last-child {
+    color: #9db3cc;
+    font-size: 0.95rem;
+}
+
+.divisor-suave {
+    border: 0;
+    border-top: 1px solid var(--border-dim);
+    margin: 24px 0;
+}
+
+/* === HABILIDADES === */
+.lista-habilidades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.lista-habilidades li {
+    padding-left: 20px;
+    position: relative;
+    color: #9db3cc;
+    font-size: 0.95rem;
+}
+
+.lista-habilidades li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-size: 0.75rem;
+    top: 3px;
+}
+
+/* === DADOS PESSOAIS === */
+.perfil ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.perfil ul li {
+    font-size: 0.95rem;
+    color: #9db3cc;
+}
+
+.perfil ul li strong {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-right: 8px;
+}
+
+/* === IDIOMAS === */
+#idiomas p {
+    font-size: 0.95rem;
+    color: #9db3cc;
+    margin: 8px 0;
+}
+
+#idiomas p strong {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-cyan);
+    font-size: 0.82rem;
+    margin-right: 6px;
+}
+
+/* === FORMAÇÃO === */
+details summary {
+    cursor: pointer;
+    color: var(--accent-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    padding: 4px 0;
+    user-select: none;
+}
+
+details p {
+    color: #9db3cc;
+    margin: 10px 0 4px;
+    font-size: 0.95rem;
+}
+
+details p strong {
+    color: var(--text-primary);
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #060f1f;
+    overflow-x: hidden;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 60px;
+    border-right: 1px solid var(--border-bright);
+}
+
+.sidebar a {
+    padding: 10px 28px;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    display: block;
+    transition: 0.25s;
+    text-transform: uppercase;
+}
+
+.sidebar a::before {
+    content: '> ';
+    color: var(--accent-green);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.sidebar a:hover {
+    color: var(--accent-green);
+    padding-left: 36px;
+}
+
+.sidebar a:hover::before {
+    opacity: 1;
+}
+
+.closebtn {
+    font-size: 1.6rem;
+    color: var(--text-muted) !important;
+    padding: 12px 20px !important;
+}
+
+/* === BOTÃO MENU === */
+.openbtn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    background-color: transparent;
+    color: var(--accent-green);
+    border: 1px solid var(--border-bright);
+    padding: 8px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 999;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.openbtn:hover {
+    background: rgba(0, 229, 160, 0.1);
+    color: #fff;
+}
+
+/* === PROFISSÃO === */
+#profissao {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.08em;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: var(--header-bg);
+    border-top: 1px solid var(--border-dim);
+    text-align: center;
+    padding: 36px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+/* === SIDEBAR LINKS === */
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* === CARROSSEL === */
+.carrossel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.carrossel-viewport {
+    flex: 1;
+    overflow: hidden;
+}
+
+.carrossel-track {
+    display: flex;
+    will-change: transform;
+}
+
+.carrossel-item {
+    flex: 0 0 calc(33.333% - 10px);
+    margin-right: 15px;
+    border: 1px solid var(--border-dim);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--bg-deep);
+    transition: border-color 0.3s;
+}
+
+.carrossel-item:hover {
+    border-color: var(--border-bright);
+}
+
+.carrossel-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(15%);
+    transition: filter 0.3s, transform 0.4s;
+}
+
+.carrossel-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.carrossel-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 8px 10px;
+    margin: 0;
+    text-align: center;
+    border-top: 1px solid var(--border-dim);
+}
+
+.carrossel-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid var(--border-bright);
+    border-radius: 3px;
+    color: var(--accent-green);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.carrossel-btn:hover {
+    background: rgba(0, 229, 160, 0.1);
+    color: #fff;
+}
+
+.carrossel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border-dim);
+    border: 1px solid var(--border-bright);
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.dot.ativo {
+    background: var(--accent-green);
+}
+
+/* === MODAL DE PROJETOS === */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 2000; /* Fica acima da sidebar (que tem z-index 1000) */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 13, 26, 0.85); /* Cor de fundo com transparência */
+    backdrop-filter: blur(4px); /* Efeito de desfoque no fundo */
+}
+
+.modal-conteudo {
+    background-color: var(--bg-card);
+    margin: 5vh auto;
+    padding: 30px;
+    border: 1px solid var(--border-bright);
+    border-radius: 4px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fechar-modal {
+    color: var(--text-muted);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.fechar-modal:hover {
+    color: var(--accent-green);
+}
+
+#modal-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain; /* Mantém a proporção da imagem sem cortar */
+    border-radius: 3px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-dim);
+    background-color: var(--bg-deep); /* Fundo caso a imagem não preencha tudo */
+}
+
+#modal-titulo {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-cyan);
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+#modal-descricao {
+    color: #9db3cc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Adiciona o cursor de 'clique' nos itens do carrossel */
+.carrossel-item {
+    cursor: pointer;
+}
+
+/* === TECLAS === */
+kbd {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    padding: 0 6px;
+    color: var(--text-primary);
+    background: rgba(0, 229, 160, 0.06);
+    border: 1px solid var(--border-bright);
+    border-bottom-width: 2px;
+    border-radius: 3px;
+}
+
+/* === JOGOS JOGÁVEIS === */
+.intro-jogos {
+    color: #9db3cc;
+    font-size: 0.95rem;
+    margin: 0 0 20px;
+}
+
+.intro-jogos strong {
+    color: var(--accent-green);
+}
+
+/* só aparece em aparelhos de toque (sem teclado) */
+.aviso-teclado {
+    display: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent-purple);
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin: 0 0 18px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .aviso-teclado {
+        display: block;
+    }
+}
+
+.grade-jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.cartao-jogo {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-dim);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.cartao-jogo:hover {
+    border-color: var(--border-bright);
+}
+
+.cartao-jogo-capa {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--border-dim);
+    background: #000;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cartao-jogo-capa img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(15%);
+    transition: filter 0.3s, transform 0.4s;
+}
+
+.cartao-jogo:hover .cartao-jogo-capa img {
+    filter: grayscale(0%);
+    transform: scale(1.04);
+}
+
+/* símbolo de "play" que aparece sobre a imagem */
+.cartao-jogo-capa::after {
+    content: '▶';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #fff;
+    background: rgba(5, 13, 26, 0.45);
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.cartao-jogo-capa:hover::after,
+.cartao-jogo-capa:focus-visible::after {
+    opacity: 1;
+}
+
+.cartao-jogo-capa:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: -2px;
+}
+
+.selo-jogavel {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--accent-green);
+    padding: 1px 8px;
+    border-radius: 2px;
+}
+
+.cartao-jogo-corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    padding: 14px 16px 16px;
+}
+
+.cartao-jogo-corpo h3 {
+    margin: 0;
+}
+
+.cartao-jogo-tags {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--accent-cyan);
+    margin: 0;
+}
+
+.cartao-jogo-desc {
+    color: #9db3cc;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cartao-jogo-teclas {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.btn-jogar {
+    margin-top: auto;
+    align-self: flex-start;
+    background: transparent;
+    color: var(--accent-green);
+    border: 1px solid var(--border-bright);
+    border-radius: 3px;
+    padding: 6px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-jogar:hover,
+.btn-jogar:focus-visible {
+    background: rgba(0, 229, 160, 0.12);
+    color: #fff;
+}
+
+/* === JANELA DO JOGO === */
+/* Sem o desfoque (backdrop-filter) do modal de projetos: com um jogo
+   animando por cima, o navegador refaz o desfoque da tela inteira a cada
+   quadro e o jogo trava. No lugar, um fundo quase opaco. */
+.modal-jogo {
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 2vw;
+    background-color: rgba(3, 8, 16, 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.modal-jogo.aberto {
+    display: flex;
+}
+
+/* a janela tem a largura do jogo (o iframe), sem faixas pretas dos lados */
+.modal-jogo-conteudo {
+    max-width: 100%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-bright);
+    border-radius: 4px;
+    padding: 12px 16px 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+.modal-jogo-topo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.modal-jogo-topo h3 {
+    flex: 1;
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--accent-cyan);
+}
+
+.modal-jogo-topo a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.modal-jogo-topo a:hover {
+    color: var(--accent-green);
+}
+
+.fechar-modal-jogo {
+    background: none;
+    border: 0;
+    padding: 0 4px;
+    color: var(--text-muted);
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.fechar-modal-jogo:hover {
+    color: var(--accent-green);
+}
+
+.modal-jogo-palco {
+    display: flex;
+    justify-content: center;
+    background: #000;
+    border: 1px solid var(--border-dim);
+}
+
+/* O iframe tem a proporção do jogo (--proporcao, definida pelo script)
+   e é o maior que couber na tela: na largura, tirando as margens e
+   bordas da janela (36px); na altura, tirando o topo e as linhas de texto. */
+.modal-jogo-palco iframe {
+    display: block;
+    width: min(calc(96vw - 36px), calc((96vh - 150px) * var(--proporcao, 1.25)));
+    aspect-ratio: var(--proporcao, 1.25);
+    border: 0;
+    background: #000;
+}
+
+/* os textos de baixo quebram linha na largura do jogo, sem alargar a janela */
+.modal-jogo-teclas,
+.modal-jogo-dica {
+    width: 0;
+    min-width: 100%;
+}
+
+.modal-jogo-teclas {
+    margin: 10px 0 0;
+    color: #9db3cc;
+    font-size: 0.8rem;
+    line-height: 1.9;
+    text-align: center;
+}
+
+.modal-jogo-dica {
+    margin: 2px 0 0;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .carrossel-item {
+        flex: 0 0 calc(80% - 10px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #conteudo-principal {
+        padding: 8px;
+    }
+
+    .card-secao {
+        width: 95%;
+        padding: 20px 18px;
+        margin: 12px auto;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+}

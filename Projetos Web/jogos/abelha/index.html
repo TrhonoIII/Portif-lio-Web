@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Jogo da Abelha</title>
+    <!-- Chama o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Modo embutido (index.html?embutido=1): usado quando o jogo abre dentro do currículo -->
+    <script>
+        if (/[?&]embutido=1\b/.test(location.search)) {
+            document.documentElement.classList.add("embutido");
+            // as setas e o espaço não rolam a página de fora
+            document.addEventListener("keydown", function (e) {
+                if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space"].indexOf(e.code) !== -1) {
+                    e.preventDefault();
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Jogo da Abelha</h1>
+    <section>
+        <canvas id="canvas" width="900" height="720"></canvas>
+        <script src="js/classes.js" charset="utf-8"></script>
+        <script src="js/jogo.js" charset="utf-8"></script>
+    </section>
+</body>
+</html>

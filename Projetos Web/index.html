@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Enzo Scarpin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <section class="sidebar-links">
+            <a href="#home" onclick="closeNav()">Home</a>
+            <a href="#dados-pessoais" onclick="closeNav()">Dados Pessoais</a>
+            <a href="#formacao" onclick="closeNav()">Formação</a>
+            <a href="#conhecimentos" onclick="closeNav()">Conhecimentos</a>
+            <a href="#experiencia" onclick="closeNav()">Experiência</a>
+            <a href="#habilidades" onclick="closeNav()">Habilidades</a>
+            <a href="#idiomas" onclick="closeNav()">Idiomas</a>
+            <a href="#jogos" onclick="closeNav()">Jogos</a>
+            <a href="#projetos" onclick="closeNav()">Projetos</a>
+        </section>
+    </nav>
+
+    <header id="home">
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+        <h1>Enzo Scarpin</h1>
+        <img src="imagem/foto-perfil.png" alt="Foto de Perfil" class="foto-curriculo">
+        <p id="profissao">Desenvolvedor de Jogos · Programação · Análise de Sistemas</p>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <section id="resumo-profissional" class="card-secao">
+            <h2>Apresentação</h2>
+            <p>Técnico em Programação de Jogos Digitais formado pelo IFPR, com sólida base em lógica de programação, desenvolvimento de mecânicas e arquitetura de sistemas. Possuo experiência prática em rotinas administrativas, atendimento ao cliente e gestão de fluxo de caixa. Sou proativo, com facilidade para trabalho em equipe e rápido aprendizado de novas tecnologias.</p>
+            <p><strong>Objetivos:</strong> Expandir meus conhecimentos para as áreas de análise de sistemas e desenvolvimento de software, aplicando tecnologia na otimização de processos e soluções digitais.</p>
+        </section>
+
+        <section id="dados-pessoais" class="card-secao">
+            <h2>Dados Pessoais</h2>
+            <div class="perfil">
+                <ul>
+                    <li><strong>Nome:</strong> Enzo Scarpin</li>
+                    <li><strong>Nascimento:</strong> 01/02/2008</li>
+                    <li><strong>Email:</strong> scarpinenzo@gmail.com</li>
+                    <li><strong>Telefone:</strong> (41) 9 8476-5090</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="formacao" class="card-secao">
+            <h2>Formação Acadêmica</h2>
+            <details>
+                <summary>Ver Detalhes da Formação</summary>
+                <p><strong>Curso:</strong> Ensino Médio e Técnico em Programação de Jogos Digitais</p>
+                <p><strong>Instituição:</strong> Instituto Federal do Paraná (IFPR)</p>
+                <p><strong>Período:</strong> Início: 2023 — Conclusão: 2026</p>
+            </details>
+        </section>
+
+        <section id="conhecimentos" class="card-secao">
+            <h2>Conhecimentos Técnicos</h2>
+            <div class="grid-tech">
+                <p class="conhecimentos">HTML</p>
+                <p class="conhecimentos">CSS</p>
+                <p class="conhecimentos">JavaScript</p>
+                <p class="conhecimentos">Unity / C#</p>
+                <p class="conhecimentos">Lógica de Programação</p>
+                <p class="conhecimentos">Análise de Sistemas</p>
+            </div>
+        </section>
+
+        <section id="experiencia" class="card-secao">
+            <h2>Experiência Profissional</h2>
+
+            <div class="item-experiencia">
+                <h3>Duomech Motors Ltda.</h3>
+                <p class="subtitulo-item">Auxiliar Administrativo e Orçamentista · 2024 – 2026</p>
+                <p>Responsável pela elaboração de orçamentos técnicos, gestão de relacionamento com clientes e controle de fluxo de caixa, garantindo a organização financeira e operacional da unidade.</p>
+            </div>
+
+            <hr class="divisor-suave">
+
+            <div class="item-experiencia">
+                <h3>Projeto Acadêmico: Jogo "Da Pena à Guilhotina" (IFPR)</h3>
+                <p class="subtitulo-item">Desenvolvedor de Lógica e Mecânicas · 2025 – 2026</p>
+                <p>Desenvolvimento integral da lógica de programação e das mecânicas principais. Trabalho realizado em grupo de 5 integrantes, com foco em arquitetura de sistemas, coordenação técnica e alinhamento narrativa-jogabilidade.</p>
+            </div>
+        </section>
+
+        <section id="habilidades" class="card-secao">
+            <h2>Habilidades</h2>
+            <ul class="lista-habilidades">
+                <li>Trabalho em equipe e colaboração multidisciplinar.</li>
+                <li>Comunicação clara e assertiva.</li>
+                <li>Proatividade e foco em eficiência de processos.</li>
+                <li>Capacidade de aprendizado contínuo e adaptabilidade.</li>
+                <li>Organização e gestão de tempo.</li>
+                <li>Raciocínio lógico e resolução de problemas técnicos.</li>
+            </ul>
+        </section>
+
+        <section id="idiomas" class="card-secao">
+            <h2>Idiomas</h2>
+            <p><strong>Português:</strong> Nativo</p>
+            <p><strong>Inglês:</strong> Básico (leitura técnica)</p>
+        </section>
+
+        <section id="jogos" class="card-secao">
+            <h2>Jogue no navegador</h2>
+            <p class="intro-jogos">Jogos que programei com HTML, CSS e JavaScript. Clique em <strong>Jogar</strong> para abrir o jogo aqui mesmo, nesta página.</p>
+            <p class="aviso-teclado">Os jogos usam o teclado: abra esta página num computador para jogar.</p>
+
+            <div class="grade-jogos">
+                <article class="cartao-jogo"
+                         data-titulo="Jogo da Abelha"
+                         data-src="jogos/abelha/index.html?embutido=1"
+                         data-site="jogos/abelha/index.html"
+                         data-proporcao="1.25">
+                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar o Jogo da Abelha">
+                        <img src="imagem/jogo-abelha.png" alt="Jogo da Abelha: a abelha desvia de uma aranha para pegar uma flor">
+                        <span class="selo-jogavel">Jogável</span>
+                    </button>
+                    <div class="cartao-jogo-corpo">
+                        <h3>Jogo da Abelha</h3>
+                        <p class="cartao-jogo-tags">Canvas 2D · 1 jogador</p>
+                        <p class="cartao-jogo-desc">Colete 15 flores em 60 segundos e desvie das aranhas. Sprites animados, trilha sonora e telas de início, vitória e derrota.</p>
+                        <p class="cartao-jogo-teclas"><kbd>←</kbd> <kbd>→</kbd> ou <kbd>A</kbd> <kbd>D</kbd> movem · <kbd>Enter</kbd> começa</p>
+                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
+                    </div>
+                </article>
+
+                <article class="cartao-jogo"
+                         data-titulo="Pong"
+                         data-src="jogos/pong/index.html?embutido=1"
+                         data-site="jogos/pong/index.html"
+                         data-proporcao="1.7778">
+                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar Pong">
+                        <img src="imagem/jogo-pong.png" alt="Pong: duas raquetes e a bola no meio de uma partida">
+                        <span class="selo-jogavel">Jogável</span>
+                    </button>
+                    <div class="cartao-jogo-corpo">
+                        <h3>Pong</h3>
+                        <p class="cartao-jogo-tags">Canvas 2D · 2 jogadores</p>
+                        <p class="cartao-jogo-desc">O clássico para dois jogadores no mesmo teclado, com colisão, placar e tela de fim de partida. Quem fizer 3 pontos primeiro vence.</p>
+                        <p class="cartao-jogo-teclas">Jogador 1: <kbd>W</kbd> <kbd>S</kbd> · Jogador 2: <kbd>↑</kbd> <kbd>↓</kbd> · <kbd>Espaço</kbd> começa</p>
+                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
+                    </div>
+                </article>
+
+                <article class="cartao-jogo"
+                         data-titulo="Outlaw 3D"
+                         data-src="jogos/outlaw/index.html?embutido=1"
+                         data-site="jogos/outlaw/index.html"
+                         data-proporcao="1.25">
+                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar Outlaw 3D">
+                        <img src="imagem/jogo-outlaw.jpg" alt="Outlaw 3D: dois pistoleiros de voxels frente a frente numa rua do velho oeste, com um cacto no meio">
+                        <span class="selo-jogavel">Jogável</span>
+                    </button>
+                    <div class="cartao-jogo-corpo">
+                        <h3>Outlaw 3D</h3>
+                        <p class="cartao-jogo-tags">WebGL · 3D · 1 ou 2 jogadores</p>
+                        <p class="cartao-jogo-desc">Releitura em 3D do Outlaw, do Atari 2600, em WebGL puro, sem bibliotecas. Duelo para dois ou Tiro ao Alvo para um, com três cenários e três câmeras. Projeto em dupla.</p>
+                        <p class="cartao-jogo-teclas">Jogador 1: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> anda, <kbd>F</kbd> atira · Jogador 2: setas andam, <kbd>Enter</kbd> atira · segure o tiro para mirar</p>
+                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projetos" class="card-secao">
+            <h2>Projetos</h2>
+            <div class="carrossel-wrapper">
+                <button class="carrossel-btn carrossel-prev" aria-label="Anterior">&#8592;</button>
+                <div class="carrossel-viewport">
+                    <div class="carrossel-track">
+                        <div class="carrossel-item" data-title="Jogo Faraó — Ambiente 3D" data-desc="Detalhes sobre a modelagem, tecnologias usadas e desafios técnicos resolvidos durante a criação deste ambiente 3D exploratório.">
+    <img src="imagem/projeto-farao.png" alt="Jogo Faraó - Ambiente 3D egípcio">
+    <p class="carrossel-label">Jogo Faraó — Ambiente 3D</p>
+</div>
+
+<div class="carrossel-item" data-title="Jogo Fazenda — Top-down" data-desc="Descrição da lógica de programação aplicada nas mecânicas de inventário e interação com os objetos da fazenda.">
+    <img src="imagem/projeto-fazenda.png" alt="Jogo Fazenda - Top-down com HUD">
+    <p class="carrossel-label">Jogo Fazenda — Top-down</p>
+</div>
+
+<div class="carrossel-item" data-title="Jogo Samurai — Pixel Art" data-desc="Foco no desenvolvimento do controle de estados do personagem e detecção de colisões no ambiente 2D.">
+    <img src="imagem/projeto-samurai.png" alt="Jogo Samurai - Pixel Art 2D">
+    <p class="carrossel-label">Jogo Samurai — Pixel Art</p>
+</div>
+
+<div class="carrossel-item" data-title="Modelagem 3D — Blender" data-desc="Estudo de arquitetura e otimização de malhas 3D para garantir bom desempenho e renderização eficiente.">
+    <img src="imagem/projeto-casa-3d.png" alt="Modelo 3D de casa - Blender">
+    <p class="carrossel-label">Modelagem 3D — Blender</p>
+</div>
+
+<div class="carrossel-item" data-title="Jogo de Terror — Cena 3D" data-desc="Implementação de sistema de iluminação dinâmica e gatilhos de eventos para ambientação imersiva.">
+    <img src="imagem/projeto-terror.png" alt="Jogo de Terror - Cena noturna 3D">
+    <p class="carrossel-label">Jogo de Terror — Cena 3D</p>
+</div>
+                    </div>
+                </div>
+                <button class="carrossel-btn carrossel-next" aria-label="Próximo">&#8594;</button>
+            </div>
+            <!-- uma bolinha por projeto, criadas pelo script.js -->
+            <div class="carrossel-dots"></div>
+        </section>
+
+    </main>
+
+    <div id="modal-projeto" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <img id="modal-img" src="" alt="Imagem do Projeto em Destaque">
+            <h3 id="modal-titulo">Título</h3>
+            <p id="modal-descricao">Descrição detalhada</p>
+        </div>
+    </div>
+
+    <!-- Janela dos jogos: o jogo roda num iframe, criado ao abrir e apagado ao fechar -->
+    <div id="modal-jogo" class="modal modal-jogo" role="dialog" aria-modal="true" aria-labelledby="modal-jogo-titulo">
+        <div class="modal-jogo-conteudo">
+            <div class="modal-jogo-topo">
+                <h3 id="modal-jogo-titulo">Jogo</h3>
+                <a id="modal-jogo-aba" href="#" target="_blank" rel="noopener">Abrir em nova aba ↗</a>
+                <button type="button" class="fechar-modal-jogo" aria-label="Fechar o jogo">&times;</button>
+            </div>
+            <div id="modal-jogo-palco" class="modal-jogo-palco"></div>
+            <p id="modal-jogo-teclas" class="modal-jogo-teclas"></p>
+            <p class="modal-jogo-dica">Se o teclado não responder, clique uma vez dentro do jogo.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 — Enzo Scarpin · Desenvolvido com HTML, CSS e JS</p>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
