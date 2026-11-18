@@ -64,7 +64,9 @@
       var config = {
         arguments: [],
         dataUrl: buildUrl + "/BuildWeb.data",
-        frameworkUrl: buildUrl + "/BuildWeb.framework.js",
+        // "?v=": versão do arquivo, para o navegador não usar uma cópia antiga
+        // do cache (este arquivo tem os ajustes de som feitos para o site)
+        frameworkUrl: buildUrl + "/BuildWeb.framework.js?v=20261117",
         codeUrl: buildUrl + "/BuildWeb.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DEGAN Studios",
