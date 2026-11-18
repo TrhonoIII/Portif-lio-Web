@@ -18,8 +18,7 @@
             <a href="#experiencia" onclick="closeNav()">Experiência</a>
             <a href="#habilidades" onclick="closeNav()">Habilidades</a>
             <a href="#idiomas" onclick="closeNav()">Idiomas</a>
-            <a href="#jogos" onclick="closeNav()">Jogos</a>
-            <a href="#projetos" onclick="closeNav()">Projetos</a>
+            <a href="#projetos" onclick="closeNav()">Projetos e Jogos</a>
         </section>
     </nav>
 
@@ -108,93 +107,63 @@
             <p><strong>Inglês:</strong> Básico (leitura técnica)</p>
         </section>
 
-        <section id="jogos" class="card-secao">
-            <h2>Jogue no navegador</h2>
-            <p class="intro-jogos">Jogos que programei, da Unity ao JavaScript puro. Clique em <strong>Jogar</strong> para abrir o jogo aqui mesmo, nesta página.</p>
-            <p class="aviso-teclado">Os jogos usam o teclado: abra esta página num computador para jogar.</p>
-
-            <div class="grade-jogos">
-                <article class="cartao-jogo"
-                         data-titulo="Da Pena à Guilhotina"
-                         data-src="jogos/pena-guilhotina/index.html?embutido=1"
-                         data-site="jogos/pena-guilhotina/index.html"
-                         data-proporcao="1.7778">
-                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar Da Pena à Guilhotina">
-                        <img src="imagem/jogo-pena-guilhotina.jpg" alt="Da Pena à Guilhotina: menu principal do jogo sobre uma pintura de uma revolta nas ruas">
-                        <span class="selo-jogavel">Jogável</span>
-                    </button>
-                    <div class="cartao-jogo-corpo">
-                        <h3>Da Pena à Guilhotina</h3>
-                        <p class="cartao-jogo-tags">Unity · C# · TCC em grupo</p>
-                        <p class="cartao-jogo-desc">Jogo de investigação do nosso TCC no IFPR, feito por um grupo de 5 integrantes. Converse com os personagens, reúna pistas e use-as no tribunal. Fiquei com a lógica de programação e as mecânicas principais.</p>
-                        <p class="cartao-jogo-teclas">Teclado e mouse · o tutorial no começo do jogo mostra os comandos · o carregamento leva alguns segundos</p>
-                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
-                    </div>
-                </article>
-
-                <article class="cartao-jogo"
-                         data-titulo="Jogo da Abelha"
-                         data-src="jogos/abelha/index.html?embutido=1"
-                         data-site="jogos/abelha/index.html"
-                         data-proporcao="1.25">
-                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar o Jogo da Abelha">
-                        <img src="imagem/jogo-abelha.png" alt="Jogo da Abelha: a abelha desvia de uma aranha para pegar uma flor">
-                        <span class="selo-jogavel">Jogável</span>
-                    </button>
-                    <div class="cartao-jogo-corpo">
-                        <h3>Jogo da Abelha</h3>
-                        <p class="cartao-jogo-tags">Canvas 2D · 1 jogador</p>
-                        <p class="cartao-jogo-desc">Colete 15 flores em 60 segundos e desvie das aranhas. Sprites animados, trilha sonora e telas de início, vitória e derrota.</p>
-                        <p class="cartao-jogo-teclas"><kbd>←</kbd> <kbd>→</kbd> ou <kbd>A</kbd> <kbd>D</kbd> movem · <kbd>Enter</kbd> começa</p>
-                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
-                    </div>
-                </article>
-
-                <article class="cartao-jogo"
-                         data-titulo="Pong"
-                         data-src="jogos/pong/index.html?embutido=1"
-                         data-site="jogos/pong/index.html"
-                         data-proporcao="1.7778">
-                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar Pong">
-                        <img src="imagem/jogo-pong.png" alt="Pong: duas raquetes e a bola no meio de uma partida">
-                        <span class="selo-jogavel">Jogável</span>
-                    </button>
-                    <div class="cartao-jogo-corpo">
-                        <h3>Pong</h3>
-                        <p class="cartao-jogo-tags">Canvas 2D · 2 jogadores</p>
-                        <p class="cartao-jogo-desc">O clássico para dois jogadores no mesmo teclado, com colisão, placar e tela de fim de partida. Quem fizer 3 pontos primeiro vence.</p>
-                        <p class="cartao-jogo-teclas">Jogador 1: <kbd>W</kbd> <kbd>S</kbd> · Jogador 2: <kbd>↑</kbd> <kbd>↓</kbd> · <kbd>Espaço</kbd> começa</p>
-                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
-                    </div>
-                </article>
-
-                <article class="cartao-jogo"
-                         data-titulo="Outlaw 3D"
-                         data-src="jogos/outlaw/index.html?embutido=1"
-                         data-site="jogos/outlaw/index.html"
-                         data-proporcao="1.25">
-                    <button type="button" class="cartao-jogo-capa abre-jogo" aria-label="Jogar Outlaw 3D">
-                        <img src="imagem/jogo-outlaw.jpg" alt="Outlaw 3D: dois pistoleiros de voxels frente a frente numa rua do velho oeste, com um cacto no meio">
-                        <span class="selo-jogavel">Jogável</span>
-                    </button>
-                    <div class="cartao-jogo-corpo">
-                        <h3>Outlaw 3D</h3>
-                        <p class="cartao-jogo-tags">WebGL · 3D · 1 ou 2 jogadores</p>
-                        <p class="cartao-jogo-desc">Releitura em 3D do Outlaw, do Atari 2600, em WebGL puro, sem bibliotecas. Duelo para dois ou Tiro ao Alvo para um, com três cenários e três câmeras. Projeto em dupla.</p>
-                        <p class="cartao-jogo-teclas">Jogador 1: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> anda, <kbd>F</kbd> atira · Jogador 2: setas andam, <kbd>Enter</kbd> atira · segure o tiro para mirar</p>
-                        <button type="button" class="btn-jogar abre-jogo">▶ Jogar</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-
         <section id="projetos" class="card-secao">
-            <h2>Projetos</h2>
+            <h2>Projetos e jogos</h2>
+            <p class="intro-projetos">Os itens com o selo <span class="selo-exemplo">▶ Jogável</span> abrem o jogo aqui mesmo, nesta página. Os outros mostram os detalhes do projeto.</p>
+            <p class="aviso-teclado">Os jogos usam o teclado: abra esta página num computador para jogar.</p>
             <div class="carrossel-wrapper">
                 <button class="carrossel-btn carrossel-prev" aria-label="Anterior">&#8592;</button>
                 <div class="carrossel-viewport">
                     <div class="carrossel-track">
-                        <div class="carrossel-item" data-title="Jogo Faraó — Ambiente 3D" data-desc="Detalhes sobre a modelagem, tecnologias usadas e desafios técnicos resolvidos durante a criação deste ambiente 3D exploratório.">
+                        <!-- Jogos jogáveis: data-jogo é a página do jogo no modo embutido,
+                             data-site abre o jogo sozinho numa aba e data-proporcao é
+                             largura / altura da tela do jogo. As teclas aparecem embaixo do jogo. -->
+                        <div class="carrossel-item jogavel" data-title="Da Pena à Guilhotina"
+                             data-jogo="jogos/pena-guilhotina/index.html?embutido=1"
+                             data-site="jogos/pena-guilhotina/index.html" data-proporcao="1.7778">
+    <div class="carrossel-capa">
+        <img src="imagem/jogo-pena-guilhotina.jpg" alt="Da Pena à Guilhotina: menu principal do jogo sobre uma pintura de uma revolta nas ruas" style="object-position: 92% center">
+        <span class="selo-jogavel">▶ Jogável</span>
+    </div>
+    <p class="carrossel-label">Da Pena à Guilhotina — TCC</p>
+    <div class="carrossel-teclas" hidden>Teclado e mouse · o tutorial no começo do jogo mostra os comandos · o carregamento leva alguns segundos</div>
+</div>
+
+<div class="carrossel-item jogavel" data-title="Outlaw 3D"
+     data-jogo="jogos/outlaw/index.html?embutido=1"
+     data-site="jogos/outlaw/index.html" data-proporcao="1.25">
+    <div class="carrossel-capa">
+        <img src="imagem/jogo-outlaw.jpg" alt="Outlaw 3D: dois pistoleiros de voxels frente a frente numa rua do velho oeste, com um cacto no meio">
+        <span class="selo-jogavel">▶ Jogável</span>
+    </div>
+    <p class="carrossel-label">Outlaw 3D — WebGL, em dupla</p>
+    <div class="carrossel-teclas" hidden>Jogador 1: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> anda, <kbd>F</kbd> atira · Jogador 2: setas andam, <kbd>Enter</kbd> atira · segure o tiro para mirar</div>
+</div>
+
+<div class="carrossel-item jogavel" data-title="Jogo da Abelha"
+     data-jogo="jogos/abelha/index.html?embutido=1"
+     data-site="jogos/abelha/index.html" data-proporcao="1.25">
+    <div class="carrossel-capa">
+        <img src="imagem/jogo-abelha.png" alt="Jogo da Abelha: a abelha desvia de uma aranha para pegar uma flor">
+        <span class="selo-jogavel">▶ Jogável</span>
+    </div>
+    <p class="carrossel-label">Jogo da Abelha — Canvas 2D</p>
+    <div class="carrossel-teclas" hidden><kbd>←</kbd> <kbd>→</kbd> ou <kbd>A</kbd> <kbd>D</kbd> movem · <kbd>Enter</kbd> começa</div>
+</div>
+
+<div class="carrossel-item jogavel" data-title="Pong"
+     data-jogo="jogos/pong/index.html?embutido=1"
+     data-site="jogos/pong/index.html" data-proporcao="1.7778">
+    <div class="carrossel-capa">
+        <img src="imagem/jogo-pong.png" alt="Pong: duas raquetes e a bola no meio de uma partida">
+        <span class="selo-jogavel">▶ Jogável</span>
+    </div>
+    <p class="carrossel-label">Pong — 2 jogadores</p>
+    <div class="carrossel-teclas" hidden>Jogador 1: <kbd>W</kbd> <kbd>S</kbd> · Jogador 2: <kbd>↑</kbd> <kbd>↓</kbd> · <kbd>Espaço</kbd> começa</div>
+</div>
+
+<!-- Projetos (abrem a descrição) -->
+<div class="carrossel-item" data-title="Jogo Faraó — Ambiente 3D" data-desc="Detalhes sobre a modelagem, tecnologias usadas e desafios técnicos resolvidos durante a criação deste ambiente 3D exploratório.">
     <img src="imagem/projeto-farao.png" alt="Jogo Faraó - Ambiente 3D egípcio">
     <p class="carrossel-label">Jogo Faraó — Ambiente 3D</p>
 </div>
@@ -222,7 +191,7 @@
                 </div>
                 <button class="carrossel-btn carrossel-next" aria-label="Próximo">&#8594;</button>
             </div>
-            <!-- uma bolinha por projeto, criadas pelo script.js -->
+            <!-- uma bolinha por item do carrossel, criadas pelo script.js -->
             <div class="carrossel-dots"></div>
         </section>
 

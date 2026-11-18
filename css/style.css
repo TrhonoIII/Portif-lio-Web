@@ -582,15 +582,25 @@ kbd {
     border-radius: 3px;
 }
 
-/* === JOGOS JOGÁVEIS === */
-.intro-jogos {
+/* === JOGOS NO CARROSSEL === */
+.intro-projetos {
     color: #9db3cc;
     font-size: 0.95rem;
-    margin: 0 0 20px;
+    margin: 0 0 18px;
 }
 
-.intro-jogos strong {
-    color: var(--accent-green);
+/* o selo dentro do texto de explicação */
+.selo-exemplo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--accent-green);
+    padding: 1px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
 }
 
 /* só aparece em aparelhos de toque (sem teclado) */
@@ -611,79 +621,13 @@ kbd {
     }
 }
 
-/* duas colunas no computador (4 jogos = 2 × 2) e uma no celular */
-.grade-jogos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: 16px;
-}
-
-.cartao-jogo {
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-deep);
-    border: 1px solid var(--border-dim);
-    border-radius: 3px;
-    overflow: hidden;
-    transition: border-color 0.3s;
-}
-
-.cartao-jogo:hover {
-    border-color: var(--border-bright);
-}
-
-.cartao-jogo-capa {
+/* a imagem dos jogos fica numa moldura, para o selo e o ▶ ficarem por cima */
+.carrossel-capa {
     position: relative;
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    padding: 0;
-    border: 0;
-    border-bottom: 1px solid var(--border-dim);
-    background: #000;
     overflow: hidden;
-    cursor: pointer;
 }
 
-.cartao-jogo-capa img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(15%);
-    transition: filter 0.3s, transform 0.4s;
-}
-
-.cartao-jogo:hover .cartao-jogo-capa img {
-    filter: grayscale(0%);
-    transform: scale(1.04);
-}
-
-/* símbolo de "play" que aparece sobre a imagem */
-.cartao-jogo-capa::after {
-    content: '▶';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
-    color: #fff;
-    background: rgba(5, 13, 26, 0.45);
-    opacity: 0;
-    transition: opacity 0.25s;
-}
-
-.cartao-jogo-capa:hover::after,
-.cartao-jogo-capa:focus-visible::after {
-    opacity: 1;
-}
-
-.cartao-jogo-capa:focus-visible {
-    outline: 2px solid var(--accent-green);
-    outline-offset: -2px;
-}
-
+/* selo "▶ Jogável" no canto da imagem */
 .selo-jogavel {
     position: absolute;
     top: 8px;
@@ -696,64 +640,41 @@ kbd {
     text-transform: uppercase;
     color: var(--bg-deep);
     background: var(--accent-green);
-    padding: 1px 8px;
+    padding: 2px 8px;
     border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
 }
 
-.cartao-jogo-corpo {
+/* ▶ grande que aparece sobre a imagem ao passar o mouse num jogo */
+.carrossel-item.jogavel .carrossel-capa::after {
+    content: '▶';
+    position: absolute;
+    inset: 0;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
-    padding: 14px 16px 16px;
-}
-
-.cartao-jogo-corpo h3 {
-    margin: 0;
-}
-
-.cartao-jogo-tags {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    color: var(--accent-cyan);
-    margin: 0;
-}
-
-.cartao-jogo-desc {
-    color: #9db3cc;
-    font-size: 0.88rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.cartao-jogo-teclas {
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    line-height: 1.9;
-    margin: 0;
-}
-
-.btn-jogar {
-    margin-top: auto;
-    align-self: flex-start;
-    background: transparent;
-    color: var(--accent-green);
-    border: 1px solid var(--border-bright);
-    border-radius: 3px;
-    padding: 6px 16px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-}
-
-.btn-jogar:hover,
-.btn-jogar:focus-visible {
-    background: rgba(0, 229, 160, 0.12);
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
     color: #fff;
+    background: rgba(5, 13, 26, 0.45);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+}
+
+.carrossel-item.jogavel:hover .carrossel-capa::after,
+.carrossel-item.jogavel:focus-visible .carrossel-capa::after {
+    opacity: 1;
+}
+
+/* a legenda dos jogos em verde, para combinar com o selo */
+.carrossel-item.jogavel .carrossel-label {
+    color: var(--accent-green);
+}
+
+.carrossel-item:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: -2px;
 }
 
 /* === JANELA DO JOGO === */
